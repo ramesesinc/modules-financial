@@ -128,7 +128,7 @@ class AccountMappingModel {
             }
             listHandler.reload();
        }
-       Modal.show( "account:lookup", ['query.maingroupid': mainGroup.objid, onselect: h]);
+       Modal.show( "account:lookup-item-detail", ['query.maingroupid': mainGroup.objid, onselect: h]);
     }
 
     void unmapAccount() {

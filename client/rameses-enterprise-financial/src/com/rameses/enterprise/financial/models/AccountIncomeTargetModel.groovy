@@ -39,6 +39,6 @@ class AccountIncomeTargetModel extends com.rameses.seti2.models.CrudFormModel {
             'query.maingroupid' : getMainGroup(), 
             'query._actionid'   : 'account_incometarget:lookup-account' 
         ];
-        return Inv.lookupOpener("account:lookup", param);
+        return Inv.lookupOpener("account:lookup-item-detail", param);
     }
 }
