@@ -1,19 +1,34 @@
-<workunit extends="com/rameses/seti2/templates/CrudLookup.xml" schemaName="fund">
+<workunit extends="com/rameses/seti2/templates/CrudLookup.xml" 
+          schemaName="fund">
     <invokers>
-        <invoker type="fund:all:lookup" caption="Lookup Fund" action="init" 
-                 cols="code,title,groupid" orderBy="depositoryfund.title,code" 
-                 customFilter="state = 'ACTIVE' "
+        <invoker type="fund:all:lookup" 
+                 caption="Lookup Fund" action="init" 
+                 cols="code,title,groupid" 
+                 hiddenCols="group.indexno" 
+                 customFilter="state = 'ACTIVE' " 
+                 orderBy="group.indexno,code" 
                  target="popup" width="800"/>
 
-        <invoker type="fund:lookup" caption="Lookup Fund" target="popup" 
-                 cols="code,title,groupid" orderBy="code" action="init" customFilter="parentid IS NULL AND state='ACTIVE' "/>
+        <invoker type="fund:lookup" 
+                 caption="Lookup Fund" action="init" target="popup" 
+                 cols="code,title,groupid" 
+                 hiddenCols="group.indexno" 
+                 customFilter="parentid IS NULL AND state='ACTIVE' " 
+                 orderBy="group.indexno,code" />
 
-        <invoker type="fund_depository:lookup" caption="Lookup Depository Fund" target="popup" 
-                 cols="code,title,groupid" orderBy="code" action="init" customFilter="objid=depositoryfundid AND groupid = :groupid AND state='ACTIVE' "/>
+        <invoker type="fund_depository:lookup" 
+                 caption="Lookup Depository Fund" action="init" target="popup" 
+                 cols="code,title,groupid" 
+                 hiddenCols="group.indexno" 
+                 customFilter="objid=depositoryfundid AND groupid = :groupid AND state='ACTIVE' " 
+                 orderBy="group.indexno,code" />
 
-        <invoker type="depositoryfund:lookup" caption="Lookup Depository Fund" target="popup" 
-                 cols="code,title,groupid" orderBy="code" action="init" customFilter="objid=depositoryfundid AND state='ACTIVE' "/>
-
+        <invoker type="depositoryfund:lookup" 
+                 caption="Lookup Depository Fund" action="init" target="popup" 
+                 cols="code,title,groupid" 
+                 hiddenCols="group.indexno" 
+                 customFilter="objid=depositoryfundid AND state='ACTIVE' " 
+                 orderBy="group.indexno,code" />
     </invokers>
 </workunit>
 

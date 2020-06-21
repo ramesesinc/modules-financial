@@ -1,11 +1,15 @@
 <workunit extends="com/rameses/seti2/templates/CrudNodeList.xml" schemaName="fund">
     <invokers>
         <invoker folderid="/explorer/master/financial" 
-                 caption="Funds" action="init" role="MASTER" permission="fund.view"
-                 cols="code,title" orderBy="code" index="0"/>
+                 caption="Funds" action="init" 
+                 role="MASTER" permission="fund.view"
+                 cols="code,title,state" orderBy="code" index="0"/>
         
-        <invoker type="quick_launcher" code="FUND00" caption="Funds"
-                 role="MASTER" permission="fund.view"/> 
-        
+        <invoker type="quick_launcher" code="FUND00" 
+                 caption="Funds" action="init" 
+                 role="MASTER" permission="fund.view"
+                 cols="code,title,state" orderBy="code,title" index="0"/>                 
    </invokers>
+   
+   <code class="com.rameses.enterprise.financial.models.FundListModel" />
 </workunit>

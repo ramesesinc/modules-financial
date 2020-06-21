@@ -1,4 +1,5 @@
-<workunit schemaName="fund">
+<workunit schemaName="fund" callerRefreshMethod="search" 
+          allowEdit="#{entity.state.toString().matches('DRAFT|INACTIVE') == true}">
         
     <invokers>
          <invoker type="fund:create" action="create" caption="Fund (New)" role="MASTER" permission="fund.create" target="popup"/>
