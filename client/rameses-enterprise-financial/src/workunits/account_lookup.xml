@@ -31,7 +31,7 @@
         <invoker type="account:lookup-item-detail" 
                  caption="Lookup Account" action="init" target="popup" 
                  customFilter="maingroupid = :maingroupid AND type IN ('item','detail')"
-                 cols="code,title,group.title,type" 
+                 cols="code,title,type,grouppath" 
                  width="800" height="600"/> 
     </invokers>
     
